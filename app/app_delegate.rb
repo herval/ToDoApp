@@ -37,7 +37,6 @@ class AppDelegate
 
   def newTask
     controller = NewTaskForm.new.controller
-
     self.tabController.presentViewController(controller, animated: true, completion: nil);
   end
 end

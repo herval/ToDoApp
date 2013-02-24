@@ -5,6 +5,7 @@ class TasksController < UITableViewController
     @table_view.dataSource = self
     self.view = @table_view
 
+    Task.deserialize_from_file('tasks.dat')
     @tasks = Task.all
   end
 

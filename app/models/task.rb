@@ -3,5 +3,5 @@ class Task
   include MotionModel::ArrayModelAdapter
 
   columns name: :string,
-          due_date: :date
+          dueDate: :date
 end

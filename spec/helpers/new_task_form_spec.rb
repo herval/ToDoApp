@@ -23,4 +23,9 @@ describe "New Task Form" do
   it "builds a navigation controller" do
     @builder.controller.class.should == UINavigationController
   end
+
+  it "adds a cancel button" do
+    btn = @builder.controller.navigationBar.topItem.leftBarButtonItem
+    btn.title.should == "Cancel"
+  end
 end
