@@ -1,0 +1,11 @@
+
+PODS:
+- QuickDialog (0.6)
+
+DEPENDENCIES:
+- QuickDialog (= 0.6)
+
+SPEC CHECKSUMS:
+  QuickDialog: a479d4321f556d9493a1ddf5d0504c45028cbd82
+
+COCOAPODS: 0.16.3

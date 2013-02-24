@@ -2,6 +2,7 @@
 build
 tags
 app/pixate_code.rb
+vendor/Pods/
 resources/*.nib
 resources/*.momd
 resources/*.storyboardc

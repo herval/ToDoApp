@@ -2,8 +2,6 @@ class AppDelegate
   attr_reader :tabController
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
-    #return true if RUBYMOTION_ENV == 'test'
-
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     @window.makeKeyAndVisible
 
@@ -38,7 +36,8 @@ class AppDelegate
   end
 
   def newTask
-    newTaskController = NewTaskController.new
-    self.tabController.presentViewController(newTaskController, animated: true, completion: nil);
+    controller = NewTaskForm.new.controller
+
+    self.tabController.presentViewController(controller, animated: true, completion: nil);
   end
 end

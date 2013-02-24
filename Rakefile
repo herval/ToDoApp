@@ -6,7 +6,10 @@ require 'bundler'
 Bundler.require
 
 Motion::Project::App.setup do |app|
-  # Use `rake config' to see complete project settings.
+  app.pods do
+    pod 'QuickDialog', "= 0.6"
+  end
+
   app.icons = ["Icon.png", "Icon@2x.png"]
   app.version = "1.0"
   app.device_family = :iphone
