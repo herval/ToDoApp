@@ -1,4 +1,4 @@
-class TodoController < UITableViewController
+class TasksController < UITableViewController
   def viewDidLoad
     @table_view = UITableView.alloc.initWithFrame(UIScreen.mainScreen.applicationFrame, style: UITableViewStylePlain)
     @table_view.delegate = self
@@ -21,5 +21,20 @@ class TodoController < UITableViewController
   def tableView(tableView, numberOfRowsInSection: section)
     Task.count
   end
+
+  #def newTask
+  #  newTaskController = NewTaskController.new
+  #  self.addChildViewController(newTaskController)
+  #  self.presentViewController(newTaskController, animated: true, completion: nil);
+  #end
+
+  #def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+  #  tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  #
+  #  alert = UIAlertView.alloc.init
+  #  alert.message = "#{@data[indexPath.row]} tapped!"
+  #  alert.addButtonWithTitle "OK"
+  #  alert.show
+  #end
 
 end

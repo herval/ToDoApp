@@ -1,12 +1,9 @@
-describe "TodoController" do
+describe "TasksController" do
   before do
     Task.create(name: "some task")
     Task.create(name: "other task")
-    # stubs don't get 'unstubbed' in other test files (bug on motion_stump)
-    #Task.stub!(:all, return: existing_tasks)
-    #Task.stub!(:count, return: existing_tasks.size)
 
-    @controller = TodoController.new
+    @controller = TasksController.new
   end
 
   describe "tableView:cellForRowAtIndexPath:" do
@@ -29,5 +26,4 @@ describe "TodoController" do
       @controller.view.numberOfRowsInSection(0).should == Task.count
     end
   end
-
 end

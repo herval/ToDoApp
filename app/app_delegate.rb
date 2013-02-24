@@ -1,24 +1,44 @@
 class AppDelegate
+  attr_reader :tabController
+
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     #return true if RUBYMOTION_ENV == 'test'
 
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     @window.makeKeyAndVisible
 
-    @window.rootViewController = self.setup_nav_bar
+    @window.rootViewController = self.setupNavBar
     true
   end
 
-  def setup_nav_bar
-    todo_controller = TodoController.new
-    todo_controller.title = "My Tasks"
+  def newTaskButton
+    buttonImage = UIImage.imageNamed("add_48.png")
+    actionButton = UIButton.buttonWithType(UIButtonTypeCustom)
+    actionButton.setBackgroundImage(buttonImage, forState: UIControlStateNormal)
+    actionButton.frame = CGRectMake(0, 0, 50, 50)
+    actionButton
+  end
 
-    about_controller = UIViewController.new
-    about_controller.title = "About"
+  def setupNavBar
+    tasksController = TasksController.new
+    tasksController.title = "My Tasks"
 
-    nav_controller = UITabBarController.new
-    nav_controller.viewControllers = [todo_controller, about_controller]
+    aboutController = UIViewController.new
+    aboutController.title = "About"
 
-    nav_controller
+    tabController = UITabBarController.new
+    tabController.viewControllers = [tasksController, aboutController]
+
+    actionButton = self.newTaskButton
+    actionButton.center = tabController.tabBar.center
+    actionButton.addTarget(self, action: 'newTask', forControlEvents: UIControlEventTouchUpInside)
+    tabController.view.addSubview(actionButton)
+
+    @tabController = tabController
+  end
+
+  def newTask
+    newTaskController = NewTaskController.new
+    self.tabController.presentViewController(newTaskController, animated: true, completion: nil);
   end
 end
