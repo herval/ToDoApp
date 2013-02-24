@@ -5,6 +5,7 @@ GEM
     motion-stump (0.2.0)
     motion_model (0.4.0)
       bubble-wrap (~> 1.1.4)
+    rake (10.0.3)
 
 PLATFORMS
   ruby
@@ -13,3 +14,4 @@ DEPENDENCIES
   bubble-wrap
   motion-stump
   motion_model
+  rake
